@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 const schema = z.object({
   NODE_ENV: z.enum(['dev', 'test', 'prod']).default('dev'),
-  PORT: z.coerce.number().default(333)
+  PORT: z.coerce.number().default(333),
 })
 
 const _env = schema.safeParse(process.env)

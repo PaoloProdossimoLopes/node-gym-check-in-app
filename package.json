@@ -10,13 +10,16 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
+    "lint": "eslint src --fix",
     "start": "node build/server.cjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@rocketseat/eslint-config": "2.1.0",
     "@types/node": "20.8.0",
+    "eslint": "8.50.0",
     "tsup": "7.2.0",
     "tsx": "3.13.0",
     "typescript": "5.2.2"

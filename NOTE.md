@@ -66,4 +66,9 @@ docker logs std-node-solid-api-pg -follow #Abre o console com os logs do contain
 docker compose up -d # o `-d` faz rodar em background sem os logs
 docker compose stop # comando para parar os containers porem sem apagar
 docker compose down # comando para apagar os containers
+
+
+npx prisma --init
+npx prisma migrate dev
+npx prisma studio
 ```

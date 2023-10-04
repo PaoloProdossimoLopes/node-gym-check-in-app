@@ -44,3 +44,26 @@ funcionalidade
 - [ ] Os dados da aplicação precisam esta persistidos em um banco de dados postgressSQL
 - [ ] Todas as listas de dados devem estar paginadas com 20 items por pagina
 - [ ] O usuario deve ser identificado por um JWT
+
+Comando docker:
+
+```sh
+#Comando para criar um container postgresql
+# esse comando tbm faz uma conexão da porta 5432 do seu pc com a 5432 do container
+docker run --name std-node-solid-api-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnami/postgresql
+
+#CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS                          PORTS     NAMES
+#d46177ba9cf7   bitnami/postgresql   "/opt/bitnami/script…"   2 minutes ago   Exited (0) About a minute ago             std-node-solid-api-pg
+docker ps -a #Lista todas os containers que vc criou
+
+docker start std-node-solid-api-pg #Comando para rodar o container novamente
+docker stop std-node-solid-api-pg #comando para parar o container
+docker rm std-node-solid-api-pg #Comando para apagar um container
+docker logs std-node-solid-api-pg #Abre o console com os logs do container
+docker logs std-node-solid-api-pg -follow #Abre o console com os logs do container em tempo real
+
+# Usando docker compose
+docker compose up -d # o `-d` faz rodar em background sem os logs
+docker compose stop # comando para parar os containers porem sem apagar
+docker compose down # comando para apagar os containers
+```

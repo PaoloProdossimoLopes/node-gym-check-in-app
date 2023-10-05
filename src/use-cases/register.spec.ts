@@ -27,7 +27,7 @@ describe('RegisterUseCase', () => {
       password: 'any passqord',
     })
 
-    expect(() =>
+    await expect(() =>
       registerUseCase.handle({
         name: 'Any other Jhon Doe',
         email,

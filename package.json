@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
+    "test": "vitest",
     "build": "tsup src --out-dir build",
     "lint": "eslint src --fix",
     "start": "node build/server.cjs",
@@ -30,8 +31,12 @@
   },
   "dependencies": {
     "@prisma/client": "5.3.1",
+    "@types/bcryptjs": "2.4.4",
+    "bcryptjs": "2.4.3",
     "dotenv": "16.3.1",
     "fastify": "4.23.2",
+    "vite-tsconfig-paths":  "4.0.5",
+    "vitest": "0.34.6",
     "zod": "3.22.2"
   }
 }

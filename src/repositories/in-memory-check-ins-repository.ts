@@ -3,6 +3,23 @@ import { randomUUID } from 'crypto'
 import { CheckInsRepository } from './check-ins-repository'
 
 export class InMemotyUsersRepository implements CheckInsRepository {
+  async save(checkIn: CheckIn) {
+    const i = this.items.findIndex((item) => item.id === checkIn.id)
+    if (i >= 0) {
+      this.items[i] = checkIn
+    }
+
+    return checkIn
+  }
+
+  async findById(id: string) {
+    const checkin = this.items.find((item) => item.id === id)
+
+    if (!checkin) return null
+
+    return checkin
+  }
+
   async countByUserId(userId: string) {
     return this.items.filter((item) => item.user_id === userId).length
   }

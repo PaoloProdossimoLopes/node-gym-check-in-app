@@ -4,6 +4,16 @@ import { UserData, UserRepository } from './user-repository'
 export class InMemotyUsersRepository implements UserRepository {
   public items: User[] = []
 
+  async findById(userId: string) {
+    const user = this.items.find((item) => item.id === userId)
+
+    if (!user) {
+      return null
+    }
+
+    return user
+  }
+
   async handle({ name, email, password_hash }: UserData): Promise<{
     id: string
     name: string

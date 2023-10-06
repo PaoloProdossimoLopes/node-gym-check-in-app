@@ -1,7 +1,22 @@
+import { getDistanceBetweenCoordinates } from '@/use-cases/utils/get-distance-coordinates'
 import { Gym } from '@prisma/client'
 import { GymsRepository } from './gyms-repository'
 
 export class InMemoryGymsRepository implements GymsRepository {
+  async findmanyBearBy(latitule: number, longitude: number) {
+    return this.items.filter((item) => {
+      const distance = getDistanceBetweenCoordinates(
+        { latitude: latitule, longitude },
+        {
+          latitude: item.latitule.toNumber(),
+          longitude: item.longitude.toNumber(),
+        },
+      )
+
+      return distance < 10 /* 10KM */
+    })
+  }
+
   async searchManyByTitle(title: string, page: number) {
     return this.items
       .filter((item) => item.title.includes(title))

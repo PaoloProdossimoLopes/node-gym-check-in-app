@@ -5,10 +5,10 @@ import { CheckInsRepository } from './check-ins-repository'
 export class InMemotyUsersRepository implements CheckInsRepository {
   public items: CheckIn[] = []
 
-  async findManyBuUserId(userId: string) {
-    const checkIns: CheckIn[] = this.items.filter(
-      (item) => item.user_id === userId,
-    )
+  async findManyBuUserId(userId: string, page: number) {
+    const checkIns: CheckIn[] = this.items
+      .filter((item) => item.user_id === userId)
+      .slice((page - 1) * 20, page * 20)
     return checkIns
   }
 

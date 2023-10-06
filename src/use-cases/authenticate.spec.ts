@@ -33,7 +33,7 @@ describe('AuthenticateUseCase', () => {
       password_hash,
     })
 
-    expect(() =>
+    await expect(() =>
       sut.handle({ email: 'any invalid email', password }),
     ).rejects.toBeInstanceOf(InvalidCredentialsError)
   })

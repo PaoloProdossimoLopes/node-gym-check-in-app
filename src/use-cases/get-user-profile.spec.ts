@@ -25,8 +25,8 @@ describe('GEtUserProfileUceCase', () => {
   it('should not be able to authenticate with wrong email', async () => {
     const repository = new InMemotyUsersRepository()
     const sut = new GetUserProfile(repository)
-    expect(() => sut.handle({ userId: 'non exist id' })).rejects.toBeInstanceOf(
-      ResourceNotFound,
-    )
+    await expect(() =>
+      sut.handle({ userId: 'non exist id' }),
+    ).rejects.toBeInstanceOf(ResourceNotFound)
   })
 })

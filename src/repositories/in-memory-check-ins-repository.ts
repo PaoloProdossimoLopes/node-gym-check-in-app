@@ -5,6 +5,13 @@ import { CheckInsRepository } from './check-ins-repository'
 export class InMemotyUsersRepository implements CheckInsRepository {
   public items: CheckIn[] = []
 
+  async findManyBuUserId(userId: string) {
+    const checkIns: CheckIn[] = this.items.filter(
+      (item) => item.user_id === userId,
+    )
+    return checkIns
+  }
+
   async findByUserIdOnDate(userId: string, date: Date) {
     const item = this.items.find(
       (item) =>
@@ -20,7 +27,7 @@ export class InMemotyUsersRepository implements CheckInsRepository {
     const checkIn = {
       gym_id: data.gym_id,
       user_id: data.user_id,
-      id: randomUUID(),
+      id: data.id ?? randomUUID(),
       created_at: new Date(),
       validated_at: data.validated_at ? new Date(data.validated_at) : null,
     }

@@ -3,6 +3,10 @@ import { randomUUID } from 'crypto'
 import { CheckInsRepository } from './check-ins-repository'
 
 export class InMemotyUsersRepository implements CheckInsRepository {
+  async countByUserId(userId: string) {
+    return this.items.filter((item) => item.user_id === userId).length
+  }
+
   public items: CheckIn[] = []
 
   async findManyBuUserId(userId: string, page: number) {

@@ -29,6 +29,7 @@
     "@vitest/ui": "0.34.6",
     "eslint": "8.50.0",
     "prisma": "5.3.1",
+    "supertest": "6.3.3",
     "tsup": "7.2.0",
     "tsx": "3.13.0",
     "typescript": "5.2.2"
@@ -37,6 +38,7 @@
     "@prisma/client": "5.3.1",
     "@types/bcryptjs": "2.4.4",
     "bcryptjs": "2.4.3",
+    "dayjs": "1.11.10",
     "dotenv": "16.3.1",
     "fastify": "4.23.2",
     "vite-tsconfig-paths": "4.0.5",

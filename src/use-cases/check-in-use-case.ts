@@ -1,10 +1,10 @@
 import { CheckInsRepository } from '@/repositories/check-ins-repository'
 import { GymsRepository } from '@/repositories/gyms-repository'
 import { CheckIn } from '@prisma/client'
+import { getDistanceBetweenCoordinates } from '../utils/get-distance-coordinates'
 import { InvalidDistanceError } from './errors/invalid-distance-error'
 import { MoreThanOneCheckInOnDayError } from './errors/more-than-one-check-in-on-day-error'
 import { ResourceNotFound } from './errors/resource-not-found-error'
-import { getDistanceBetweenCoordinates } from './utils/get-distance-coordinates'
 
 interface CheckInData {
   userId: string

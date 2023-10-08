@@ -1,4 +1,4 @@
-import { getDistanceBetweenCoordinates } from '@/use-cases/utils/get-distance-coordinates'
+import { getDistanceBetweenCoordinates } from '@/utils/get-distance-coordinates'
 import { Gym } from '@prisma/client'
 import { GymsRepository } from './gyms-repository'
 

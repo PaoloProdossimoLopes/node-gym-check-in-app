@@ -1,8 +1,8 @@
 {
-  "name": "vitest-enviroment-prisma",
+  "name": "vitest-environment-prisma",
   "version": "1.0.0",
   "description": "",
-  "main": "prisma-test-enviroment.ts",
+  "main": "prisma-test-environment.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
